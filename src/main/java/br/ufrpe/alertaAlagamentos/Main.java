@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		ArrayList<Localidade> localidades = new ArrayList<>();
-		File myFile = new File("C:\\Users\\b4rt_\\Downloads\\LinhaDoTiro.xlsx");
+		File myFile = new File("D:\\Downloads\\LinhaDoTiro.xlsx");
 		FileInputStream fis = new FileInputStream(myFile);
 
 		// Finds the workbook instance for XLSX file
@@ -129,7 +129,7 @@ public class Main {
 		pRiscoMedio = (double)riscoMedio/totalOcorrencias;
 		pRiscoBaixo = (double)riscoBaixo/totalOcorrencias;
 		
-		System.out.println("Alto: " + riscoAlto + " Médio: " + riscoMedio + " Baixo: " + riscoBaixo);
+		System.out.printf("%nAlto: " + riscoAlto + " Médio: " + riscoMedio + " Baixo: " + riscoBaixo + "%n");
 		System.out.printf("pRiscoAlagamentoAlto %.2f %n", pRiscoAlto);
 		System.out.printf("pRiscoAlagamentoMedio %.2f %n", pRiscoMedio);
 		System.out.printf("pRiscoAlagamentoBaixo %.2f %n%n", pRiscoBaixo);
@@ -211,10 +211,12 @@ public class Main {
 		System.out.printf("pRiscoAltoPluviometriaMedia %.5f %n", pRiscoAltoPluviometriaMedia);
 		System.out.printf("pRiscoAltoPluviometriaBaixa %.5f %n", pRiscoAltoPluviometriaBaixa);
 		
+		System.out.printf("%n%n");
 		System.out.printf("pRiscoMedioPluviometriaAlta %.5f %n", pRiscoMedioPluviometriaAlta);
 		System.out.printf("pRiscoMedioPluviometriaMedia %.5f %n", pRiscoMedioPluviometriaMedia);
 		System.out.printf("pRiscoMedioPluviometriaBaixa %.5f %n", pRiscoMedioPluviometriaBaixa);
-		 
+		
+		System.out.printf("%n%n");
 		System.out.printf("pRiscoBaixoPluviometriaAlta %.5f %n", pRiscoBaixoPluviometriaAlta);		
 		System.out.printf("pRiscoBaixoPluviometriaMedia %.5f %n", pRiscoBaixoPluviometriaMedia);
 		System.out.printf("pRiscoBaixoPluviometriaBaixa %.5f %n", pRiscoBaixoPluviometriaBaixa);
