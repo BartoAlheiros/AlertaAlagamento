@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		ArrayList<Localidade> localidades = new ArrayList<>();
-		File myFile = new File("D:\\Downloads\\LinhaDoTiro.xlsx");
+		File myFile = new File("C:\\Users\\b4rt_\\Downloads\\LinhaDoTiro.xlsx");
 		FileInputStream fis = new FileInputStream(myFile);
 
 		// Finds the workbook instance for XLSX file
@@ -41,7 +41,7 @@ public class Main {
 			row = rowIterator.next();
 			
 			ultimaLinha = row.getSheet().getLastRowNum();
-
+		
 			if((row.getRowNum() > 0) && (row.getRowNum() <= ultimaLinha)) {
 		
 				Localidade localidade = new Localidade();
@@ -110,6 +110,30 @@ public class Main {
 		double pRiscoAltoPluviometriaBaixa = 0;
 		double pRiscoMedioPluviometriaBaixa = 0;
 		double pRiscoBaixoPluviometriaBaixa = 0;
+		
+		int riscoAltoMarehAlta = 0;
+		int riscoMedioMarehAlta = 0;
+		int riscoBaixoMarehAlta = 0;
+		
+		int riscoAltoMarehMedia = 0;
+		int riscoMedioMarehMedia = 0;
+		int riscoBaixoMarehMedia = 0;
+
+		int riscoAltoMarehBaixa = 0;
+		int riscoMedioMarehBaixa = 0;
+		int riscoBaixoMarehBaixa = 0;
+		
+		double pRiscoAltoMarehAlta = 0;
+		double pRiscoMedioMarehAlta = 0;
+		double pRiscoBaixoMarehAlta = 0;
+		
+		double pRiscoAltoMarehMedia = 0;
+		double pRiscoMedioMarehMedia = 0;
+		double pRiscoBaixoMarehMedia = 0;
+
+		double pRiscoAltoMarehBaixa = 0;
+		double pRiscoMedioMarehBaixa = 0;
+		double pRiscoBaixoMarehBaixa = 0;
 		
 		/* Probabilidade não condicional
 		 * Contando ocorrências. */
@@ -194,7 +218,7 @@ public class Main {
 			
 		}
 		
-		/* Probabilidade condicional. Calculando. */
+		/* Probabilidade condicional -> Pluviometria ^ Risco. -- Calculando. */
 		pRiscoAltoPluviometriaAlta = (double)riscoAltoPluviometriaAlta/riscoAlto;
 		pRiscoAltoPluviometriaMedia = (double)riscoAltoPluviometriaMedia/riscoAlto;
 		pRiscoAltoPluviometriaBaixa = (double)riscoAltoPluviometriaBaixa/riscoAlto;
@@ -220,6 +244,226 @@ public class Main {
 		System.out.printf("pRiscoBaixoPluviometriaAlta %.5f %n", pRiscoBaixoPluviometriaAlta);		
 		System.out.printf("pRiscoBaixoPluviometriaMedia %.5f %n", pRiscoBaixoPluviometriaMedia);
 		System.out.printf("pRiscoBaixoPluviometriaBaixa %.5f %n", pRiscoBaixoPluviometriaBaixa);
+		
+		pRiscoAltoPluviometriaAlta = (double)riscoAltoPluviometriaAlta/riscoAlto;
+		pRiscoAltoPluviometriaMedia = (double)riscoAltoPluviometriaMedia/riscoAlto;
+		pRiscoAltoPluviometriaBaixa = (double)riscoAltoPluviometriaBaixa/riscoAlto;
+		
+		pRiscoMedioPluviometriaAlta = (double)riscoMedioPluviometriaAlta/riscoMedio;
+		pRiscoMedioPluviometriaMedia = (double)riscoMedioPluviometriaMedia/riscoMedio;
+		pRiscoMedioPluviometriaBaixa = (double)riscoMedioPluviometriaBaixa/riscoMedio;
+		
+		pRiscoBaixoPluviometriaAlta = (double)riscoBaixoPluviometriaAlta/riscoBaixo;
+		pRiscoBaixoPluviometriaMedia = (double)riscoBaixoPluviometriaMedia/riscoBaixo;
+		pRiscoBaixoPluviometriaBaixa = (double)riscoBaixoPluviometriaBaixa/riscoBaixo;
+		
+		
+		/* Probabilidade condicional. MAREH. Contabilizando Ocorrências. */
+		for (int j = 0; j < localidades.size() - 1; j++) {
+			
+			/* (Risco Alto ^ Pluviometria Alta) || (Risco Alto ^ Pluviometria Média) ||
+			 * (Risco Alto ^ Pluviometria Baixa)  */
+			
+			if(localidades.get(j).risco == 3) {
+				if (localidades.get(j).mareh == 3) {
+					riscoAltoMarehAlta++;
+				} else if (localidades.get(j).mareh == 2) {
+					riscoAltoMarehMedia++;
+				} else if (localidades.get(j).mareh == 1) {
+					riscoAltoMarehBaixa++;
+				}
+				
+			}
+		
+			
+			/* (Risco Médio ^ Pluviometria Alta) || (Risco Médio ^ Pluviometria Média) ||
+			 * (Risco Médio ^ Pluviometria Baixa)  */
+			if(localidades.get(j).risco == 2) {
+				if (localidades.get(j).mareh == 3) {
+					riscoMedioMarehAlta++;
+				} else if (localidades.get(j).mareh == 2) {
+					riscoMedioMarehMedia++;
+				} else if (localidades.get(j).mareh == 1) {
+					riscoMedioMarehBaixa++;
+				}
+				
+			}
+			
+			/* (Risco Baixo ^ Pluviometria Alta) || (Risco Baixo ^ Pluviometria Média) ||
+			 * (Risco Baixo ^ Pluviometria Baixa)  */
+			if(localidades.get(j).risco == 1) {
+				if (localidades.get(j).mareh == 3) {
+					riscoBaixoMarehAlta++;
+				} else if (localidades.get(j).mareh == 2) {
+					riscoBaixoMarehMedia++;
+				} else if (localidades.get(j).mareh == 1) {
+					riscoBaixoMarehBaixa++;
+				}
+				
+			}
+		
+			
+		}
+		
+		pRiscoAltoMarehAlta = (double)riscoAltoMarehAlta/riscoAlto;
+		pRiscoAltoMarehMedia = (double)riscoAltoMarehMedia/riscoAlto;
+		pRiscoAltoMarehBaixa = (double)riscoAltoMarehBaixa/riscoAlto;
+		
+		pRiscoMedioMarehAlta = (double)riscoMedioMarehAlta/riscoMedio;
+		pRiscoMedioMarehMedia = (double)riscoMedioMarehMedia/riscoMedio;
+		pRiscoMedioMarehBaixa = (double)riscoMedioMarehBaixa/riscoMedio;
+		
+		pRiscoBaixoMarehAlta = (double)riscoBaixoMarehAlta/riscoBaixo;
+		pRiscoBaixoMarehMedia = (double)riscoBaixoMarehMedia/riscoBaixo;
+		pRiscoBaixoMarehBaixa = (double)riscoBaixoMarehBaixa/riscoBaixo;
+		
+		/* Printando pRisco ^ Pluviometria */
+		System.out.printf("pRiscoAltoPluviometriaAlta %.5f %n", pRiscoAltoPluviometriaAlta);
+		System.out.printf("pRiscoAltoPluviometriaMedia %.5f %n", pRiscoAltoPluviometriaMedia);
+		System.out.printf("pRiscoAltoPluviometriaBaixa %.5f %n", pRiscoAltoPluviometriaBaixa);
+		
+		System.out.printf("%n%n");
+		System.out.printf("pRiscoMedioPluviometriaAlta %.5f %n", pRiscoMedioPluviometriaAlta);
+		System.out.printf("pRiscoMedioPluviometriaMedia %.5f %n", pRiscoMedioPluviometriaMedia);
+		System.out.printf("pRiscoMedioPluviometriaBaixa %.5f %n", pRiscoMedioPluviometriaBaixa);
+		
+		System.out.printf("%n%n");
+		System.out.printf("pRiscoBaixoPluviometriaAlta %.5f %n", pRiscoBaixoPluviometriaAlta);		
+		System.out.printf("pRiscoBaixoPluviometriaMedia %.5f %n", pRiscoBaixoPluviometriaMedia);
+		System.out.printf("pRiscoBaixoPluviometriaBaixa %.5f %n", pRiscoBaixoPluviometriaBaixa);
+		
+		/* Printando pRisco ^ Mareh */
+		System.out.printf("%n%n");
+		System.out.printf("pRiscoAltoMarehAlta %.5f %n", pRiscoAltoMarehAlta);
+		System.out.printf("pRiscoAltoMarehMedia %.5f %n", pRiscoAltoMarehMedia);
+		System.out.printf("pRiscoAltoMarehBaixa %.5f %n", pRiscoAltoMarehBaixa);
+		
+		System.out.printf("%n%n");
+		System.out.printf("pRiscoMedioMarehAlta %.5f %n", pRiscoMedioMarehAlta);
+		System.out.printf("pRiscoMedioMarehMedia %.5f %n", pRiscoMedioMarehMedia);
+		System.out.printf("pRiscoMedioMarehBaixa %.5f %n", pRiscoMedioMarehBaixa);
+		
+		System.out.printf("%n%n");
+		System.out.printf("pRiscoBaixoMarehAlta %.5f %n", pRiscoBaixoMarehAlta);		
+		System.out.printf("pRiscoBaixoMarehMedia %.5f %n", pRiscoBaixoMarehMedia);
+		System.out.printf("pRiscoBaixoMarehBaixa %.5f %n", pRiscoBaixoMarehBaixa);
+		
+		if (pRiscoAltoPluviometriaAlta == 0) {
+			pRiscoAltoPluviometriaAlta++;
+		}
+		
+		if (pRiscoAltoPluviometriaMedia == 0) {
+			pRiscoAltoPluviometriaMedia++;
+		}
+		
+		if (pRiscoAltoPluviometriaBaixa == 0) {
+			pRiscoAltoPluviometriaBaixa++;
+		}
+		
+		if (pRiscoMedioPluviometriaAlta == 0) {
+			pRiscoMedioPluviometriaAlta++;
+		}
+		
+		if (pRiscoMedioPluviometriaMedia == 0) {
+			pRiscoMedioPluviometriaMedia++;
+		}
+		
+		if (pRiscoMedioPluviometriaBaixa == 0) {
+			pRiscoMedioPluviometriaBaixa++;
+		}
+		
+		if (pRiscoBaixoPluviometriaAlta == 0) {
+			pRiscoBaixoPluviometriaAlta++;
+		}
+		
+		if (pRiscoBaixoPluviometriaMedia == 0) {
+			pRiscoBaixoPluviometriaMedia++;
+		}
+		
+		if (pRiscoBaixoPluviometriaBaixa == 0) {
+			pRiscoBaixoPluviometriaBaixa++;
+		}
+		
+		if (pRiscoAltoMarehAlta == 0) {
+			pRiscoAltoMarehAlta++;
+		}
+		
+		if (pRiscoAltoMarehMedia == 0) {
+			pRiscoAltoMarehMedia++;
+		}
+		
+		if (pRiscoAltoMarehBaixa == 0) {
+			pRiscoAltoMarehBaixa++;
+		}
+		
+		if (pRiscoMedioMarehAlta == 0) {
+			pRiscoMedioMarehAlta++;
+		}
+		
+		if (pRiscoMedioMarehMedia == 0) {
+			pRiscoMedioMarehMedia++;
+		}
+		
+		if (pRiscoMedioMarehBaixa == 0) {
+			pRiscoMedioMarehBaixa++;
+		}
+		
+		if (pRiscoBaixoMarehAlta == 0) {
+			pRiscoBaixoMarehAlta++;
+		}
+		
+		if (pRiscoBaixoMarehMedia == 0) {
+			pRiscoBaixoMarehMedia++;
+		}
+		
+		if (pRiscoBaixoMarehBaixa == 0) {
+			pRiscoBaixoMarehBaixa++;
+		}
+		
+		/* Calculando o risco */
+		
+		double riscCalcAlto = 0, riscCalcMedio = 0, riscCalcBaixo = 0;
+		
+		riscCalcAlto = pRiscoAlto * (pRiscoAltoPluviometriaAlta * pRiscoAltoPluviometriaMedia * pRiscoAltoPluviometriaBaixa) *
+				               pRiscoAltoMarehAlta * pRiscoAltoMarehMedia * pRiscoAltoMarehBaixa;
+		
+		riscCalcMedio = pRiscoMedio * (pRiscoMedioPluviometriaAlta * pRiscoMedioPluviometriaMedia * pRiscoMedioPluviometriaBaixa) *
+	               pRiscoMedioMarehAlta * pRiscoMedioMarehMedia * pRiscoMedioMarehBaixa;
+		
+		riscCalcBaixo = pRiscoBaixo * (pRiscoBaixoPluviometriaAlta * pRiscoBaixoPluviometriaMedia * pRiscoBaixoPluviometriaBaixa) *
+	               pRiscoBaixoMarehAlta * pRiscoBaixoMarehMedia * pRiscoBaixoMarehBaixa;
+		
+		System.out.printf("%n%n");
+		System.out.println("Risco Alto Calculado " + riscCalcAlto);
+		System.out.println("Risco Médio Calculado " + riscCalcMedio);
+		System.out.println("Risco Baixo Calculado " + riscCalcBaixo);
+		
+		double maior = 0;
+		
+		if (riscCalcAlto > riscCalcMedio) {
+			maior = riscCalcAlto;
+		} else {
+			maior = riscCalcMedio;
+		}
+		
+		if (maior < riscCalcBaixo) {
+			maior = riscCalcBaixo;
+		}
+		
+		/* TODO Consertar essa parte conforme a do NayveBayes 101 
+		 * 		(Considerando a última linha). */ 
+		
+		System.out.printf("%n%n");
+		System.out.println("Resultado " + maior);
+		
+		if (maior == riscCalcAlto) {
+			System.out.println("O Risco de alagamento é Alto.");
+		} else if (maior == riscCalcMedio) {
+			System.out.println("O Risco de alagamento é Médio.");
+		} else if (maior == riscCalcBaixo) {
+			System.out.println("O Risco de alagamento é Baixo.");
+		}
+
 		
 		// System.out.printf("o metodo executou em %.50f", ((double)System.currentTimeMillis() - tempoInicial));
 
