@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		ArrayList<Localidade> localidades = new ArrayList<>();
-		File myFile = new File("C:\\Users\\b4rt_\\Downloads\\LinhaDoTiro.xlsx");
+		File myFile = new File("D:\\Downloads\\BoaViagem.xlsx");
 		FileInputStream fis = new FileInputStream(myFile);
 
 		// Finds the workbook instance for XLSX file
@@ -544,9 +544,6 @@ public class Main {
 		if (riscCalcBaixo > maior) {
 			maior = riscCalcBaixo;
 		}
-			
-		/* TODO Consertar essa parte conforme a do NayveBayes 101 
-		 * 		(Considerando a última linha). */ 
 		
 		System.out.printf("%n%n");
 		System.out.println("Resultado " + maior);
@@ -558,21 +555,6 @@ public class Main {
 		} else if (maior == riscCalcBaixo) {
 			System.out.println("O Risco de alagamento é Baixo.");
 		}
-
-		/* Probabilidade Condicional 2a Versão */
-		
-//		for (int j = 0; j < localidades.size() - 1; j++) {
-//			
-//		}
-		
-//		System.out.println("Pluviometria entrada " + pluviometriaEntrada);
-//		System.out.println("Mareh entrada " + marehEntrada);
-//		
-		// System.out.printf("o metodo executou em %.50f", ((double)System.currentTimeMillis() - tempoInicial));
-
-//		if(Integer.toString(localidades.get((localidades.size() - 1)).riscoAlagamento).equals("?")) {
-//			System.out.println("Achei a interrogação.");
-//		}
 
 		return 0;
 
