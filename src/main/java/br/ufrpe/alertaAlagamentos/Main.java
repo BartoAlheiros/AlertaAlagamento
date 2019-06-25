@@ -358,9 +358,11 @@ public class Main {
 		pRiscoMedioMarehMedia = (double)riscoMedioMarehMedia/riscoMedio;
 		pRiscoMedioMarehBaixa = (double)riscoMedioMarehBaixa/riscoMedio;
 
+		System.out.println("RiscoBaixoMarehMedia " + riscoBaixoMarehMedia + " , riscoBaixo " + riscoBaixo);
+		System.out.printf(" **** NÚMERO de linhas de entrada %d %n", (localidades.size()-1));
 		pRiscoBaixoMarehAlta = (double)riscoBaixoMarehAlta/riscoBaixo;
-		pRiscoBaixoMarehMedia = (double)riscoBaixoMarehMedia/riscoBaixo;
-		pRiscoBaixoMarehBaixa = (double)riscoBaixoMarehBaixa/riscoBaixo;
+		pRiscoBaixoMarehMedia = (double)riscoBaixoMarehMedia/(localidades.size()-1);
+		pRiscoBaixoMarehBaixa = (double)((double)riscoBaixoMarehBaixa/(localidades.size()-1));
 
 		/* Printando pRisco ^ Pluviometria */
 		System.out.printf("pRiscoAltoPluviometriaAlta %.5f %n", pRiscoAltoPluviometriaAlta);
@@ -559,16 +561,16 @@ public class Main {
 			}
 		}
 		
-//		if (marehEntrada.equals(2)) {
-//			boolean resultado = verifica(localidades, 2, 2);
-//			System.out.println("resultado mareh" + resultado);
-//			if (resultado) {
-//				riscCalcAlto = riscCalcAlto * pRiscoAltoPluviometriaMedia;
-//				riscCalcMedio = pRiscoMedio * pRiscoMedioPluviometriaMedia;
-//				riscCalcBaixo = pRiscoBaixo * pRiscoBaixoPluviometriaMedia; 
-//			}
-//		}
-//		
+		if (marehEntrada.equals(1)) {
+			boolean resultado = verifica(localidades, 2, 1);
+			//System.out.println("resultado mareh" + resultado);
+			if (resultado) {
+				riscCalcAlto = riscCalcAlto * pRiscoAltoMarehBaixa;
+				riscCalcMedio = pRiscoMedio * pRiscoMedioMarehBaixa;
+				riscCalcBaixo = pRiscoBaixo * pRiscoBaixoMarehBaixa; 
+			}
+		}
+		
 		System.out.printf("%n%n");
 		System.out.println("Risco Alto Calculado " + riscCalcAlto);
 		System.out.println("Risco Médio Calculado " + riscCalcMedio);
