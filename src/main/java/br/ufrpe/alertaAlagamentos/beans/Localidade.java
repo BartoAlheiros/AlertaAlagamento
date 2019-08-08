@@ -3,6 +3,7 @@ package br.ufrpe.alertaAlagamentos.beans;
 public class Localidade {
 	
 	public String nome;
+	public float pluviometria;
 	public float pluvio1;
 	public float pluvio2;
 	public float puvlio3;
@@ -12,7 +13,7 @@ public class Localidade {
 	
 	public Localidade(String nome, int precip, int nivelMareh, int riscoAlagamento) {
 		this.nome = nome;
-		//this.pluviometria = precip;
+		this.pluviometria = precip;
 		this.mareh = nivelMareh;
 		// this.riscoAlagamento = riscoAlagamento;
 		this.risco = 0;

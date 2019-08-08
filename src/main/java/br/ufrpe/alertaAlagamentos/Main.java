@@ -135,7 +135,7 @@ public class Main {
 		double pRiscoMedioMarehBaixa = 0;
 		double pRiscoBaixoMarehBaixa = 0;
 
-		Integer pluviometriaEntrada = 0;
+		Float pluviometriaEntrada = 0.0f;
 		Integer marehEntrada = 0;
 		int ultimaLinha = localidades.size();
 
