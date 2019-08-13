@@ -7,7 +7,7 @@ public class Localidade {
 	public float pluvio1;
 	public float pluvio2;
 	public float puvlio3;
-	public int mareh;
+	public float mareh;
 	// public int riscoAlagamento; // risco atribuído a cada localidade, varia de 1 a 3 (1 - Baixo, 2 - Médio, 3 - Alto).
 	public int risco; // risco calculado pelo Naive Bayes(inicia com '0'). e pode assumir os valores como os de riscoAlag.
 	
