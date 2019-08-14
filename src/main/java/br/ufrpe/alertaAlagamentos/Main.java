@@ -143,104 +143,116 @@ public class Main {
 		pluviometriaEntrada = localidades.get(ultimaLinha-1).pluviometria;
 		mareEntrada = localidades.get(ultimaLinha-1).mareh;
 
-//		double pluvioEntradaERiscAlto = 0;
-//		double pluvioEntradaERiscMedio = 0;
-//		double pluvioEntradaERiscBaixo = 0;
-//
-//		double pluvioAltaRiscoAlto = 0;
-//		double pluvioAltaRiscoMedio = 0;
-//		double pluvioAltaRiscoBaixo = 0;
-//
-//		double pluvioMediaRiscoAlto = 0;
-//		double pluvioMediaRiscoMedio = 0;
-//		double pluvioMediaRiscoBaixo = 0;
-//
-//		double pluvioBaixaRiscoAlto = 0;
-//		double pluvioBaixaRiscoMedio = 0;
-//		double pluvioBaixaRiscoBaixo = 0;
-//
-//		double mareAltaRiscoAlto = 0;
-//		double mareAltaRiscoMedio = 0;
-//		double mareAltaRiscoBaixo = 0;
-//
-//		double mareMediaRiscoAlto = 0;
-//		double mareMediaRiscoMedio = 0;
-//		double mareMediaRiscoBaixo = 0;
-//
-//		double mareBaixaRiscoAlto = 0;
-//		double mareBaixaRiscoMedio = 0;
-//		double mareBaixaRiscoBaixo = 0;
-//
-//		for (int j = 0; j < localidades.size() - 1; j++) {
-//
-//			if (localidades.get(j).risco == 3) {
-//				totalRiscoAlto++;
-//			} else if (localidades.get(j).risco == 2) {
-//				totalRiscoMedio++;
-//			} else if (localidades.get(j).risco == 1) {
-//				totalRiscoBaixo++;
-//			}
-//
-//			if (pluviometriaEntrada.equals(localidades.get(j).pluviometria)) {
-//				if (pluviometriaEntrada.equals(3)) {
-//					if (localidades.get(j).risco == 3) {
-//						pluvioAltaRiscoAlto++;
-//					} else if (localidades.get(j).risco == 2) {
-//						pluvioAltaRiscoMedio++;
-//					} else if (localidades.get(j).risco == 1) {
-//						pluvioAltaRiscoBaixo++;
-//					}
-//				} else if(pluviometriaEntrada.equals(2)) {
-//					if (localidades.get(j).risco == 3) {
-//						pluvioMediaRiscoAlto++;
-//					} else if (localidades.get(j).risco == 2) {
-//						pluvioMediaRiscoMedio++;
-//					} else if (localidades.get(j).risco == 1) {
-//						pluvioMediaRiscoBaixo++;
-//					}
-//				} else {
-//					if (localidades.get(j).risco == 3) {
-//						pluvioBaixaRiscoAlto++;
-//					} else if (localidades.get(j).risco == 2) {
-//						pluvioBaixaRiscoMedio++;
-//					} else if (localidades.get(j).risco == 1) {
-//						pluvioBaixaRiscoBaixo++;
-//					}
-//				} 
-//
-//			}
-//
-//			if (mareEntrada.equals(localidades.get(j).mareh)) {
-//				if (pluviometriaEntrada.equals(3)) {
-//					if (localidades.get(j).risco == 3) {
-//						mareAltaRiscoAlto++;
-//					} else if (localidades.get(j).risco == 2) {
-//						mareAltaRiscoMedio++;
-//					} else if (localidades.get(j).risco == 1) {
-//						mareAltaRiscoBaixo++;
-//					}
-//				} else if(pluviometriaEntrada.equals(2)) {
-//					if (localidades.get(j).risco == 3) {
-//						mareMediaRiscoAlto++;
-//					} else if (localidades.get(j).risco == 2) {
-//						mareMediaRiscoMedio++;
-//					} else if (localidades.get(j).risco == 1) {
-//						mareMediaRiscoBaixo++;
-//					}
-//				} else {
-//					if (localidades.get(j).risco == 3) {
-//						mareBaixaRiscoAlto++;
-//					} else if (localidades.get(j).risco == 2) {
-//						mareBaixaRiscoMedio++;
-//					} else if (localidades.get(j).risco == 1) {
-//						mareBaixaRiscoBaixo++;
-//					}
-//				} 
-//			}
-//		}
+		//		double pluvioEntradaERiscAlto = 0;
+		//		double pluvioEntradaERiscMedio = 0;
+		//		double pluvioEntradaERiscBaixo = 0;
+		//
+		//		double pluvioAltaRiscoAlto = 0;
+		//		double pluvioAltaRiscoMedio = 0;
+		//		double pluvioAltaRiscoBaixo = 0;
+		//
+		//		double pluvioMediaRiscoAlto = 0;
+		//		double pluvioMediaRiscoMedio = 0;
+		//		double pluvioMediaRiscoBaixo = 0;
+		//
+		//		double pluvioBaixaRiscoAlto = 0;
+		//		double pluvioBaixaRiscoMedio = 0;
+		//		double pluvioBaixaRiscoBaixo = 0;
+		//
+		//		double mareAltaRiscoAlto = 0;
+		//		double mareAltaRiscoMedio = 0;
+		//		double mareAltaRiscoBaixo = 0;
+		//
+		//		double mareMediaRiscoAlto = 0;
+		//		double mareMediaRiscoMedio = 0;
+		//		double mareMediaRiscoBaixo = 0;
+		//
+		//		double mareBaixaRiscoAlto = 0;
+		//		double mareBaixaRiscoMedio = 0;
+		//		double mareBaixaRiscoBaixo = 0;
+		//
+		//		for (int j = 0; j < localidades.size() - 1; j++) {
+		//
+		//			if (localidades.get(j).risco == 3) {
+		//				totalRiscoAlto++;
+		//			} else if (localidades.get(j).risco == 2) {
+		//				totalRiscoMedio++;
+		//			} else if (localidades.get(j).risco == 1) {
+		//				totalRiscoBaixo++;
+		//			}
+		//
+		//			if (pluviometriaEntrada.equals(localidades.get(j).pluviometria)) {
+		//				if (pluviometriaEntrada.equals(3)) {
+		//					if (localidades.get(j).risco == 3) {
+		//						pluvioAltaRiscoAlto++;
+		//					} else if (localidades.get(j).risco == 2) {
+		//						pluvioAltaRiscoMedio++;
+		//					} else if (localidades.get(j).risco == 1) {
+		//						pluvioAltaRiscoBaixo++;
+		//					}
+		//				} else if(pluviometriaEntrada.equals(2)) {
+		//					if (localidades.get(j).risco == 3) {
+		//						pluvioMediaRiscoAlto++;
+		//					} else if (localidades.get(j).risco == 2) {
+		//						pluvioMediaRiscoMedio++;
+		//					} else if (localidades.get(j).risco == 1) {
+		//						pluvioMediaRiscoBaixo++;
+		//					}
+		//				} else {
+		//					if (localidades.get(j).risco == 3) {
+		//						pluvioBaixaRiscoAlto++;
+		//					} else if (localidades.get(j).risco == 2) {
+		//						pluvioBaixaRiscoMedio++;
+		//					} else if (localidades.get(j).risco == 1) {
+		//						pluvioBaixaRiscoBaixo++;
+		//					}
+		//				} 
+		//
+		//			}
+		//
+		//			if (mareEntrada.equals(localidades.get(j).mareh)) {
+		//				if (pluviometriaEntrada.equals(3)) {
+		//					if (localidades.get(j).risco == 3) {
+		//						mareAltaRiscoAlto++;
+		//					} else if (localidades.get(j).risco == 2) {
+		//						mareAltaRiscoMedio++;
+		//					} else if (localidades.get(j).risco == 1) {
+		//						mareAltaRiscoBaixo++;
+		//					}
+		//				} else if(pluviometriaEntrada.equals(2)) {
+		//					if (localidades.get(j).risco == 3) {
+		//						mareMediaRiscoAlto++;
+		//					} else if (localidades.get(j).risco == 2) {
+		//						mareMediaRiscoMedio++;
+		//					} else if (localidades.get(j).risco == 1) {
+		//						mareMediaRiscoBaixo++;
+		//					}
+		//				} else {
+		//					if (localidades.get(j).risco == 3) {
+		//						mareBaixaRiscoAlto++;
+		//					} else if (localidades.get(j).risco == 2) {
+		//						mareBaixaRiscoMedio++;
+		//					} else if (localidades.get(j).risco == 1) {
+		//						mareBaixaRiscoBaixo++;
+		//					}
+		//				} 
+		//			}
+		//		}
 
 		// OK
 		// System.out.println("Total ocorrencias " + totalOcorrencias);
+
+		for (int k = 0; k < localidades.size() - 1; k++) {
+
+			if (localidades.get(k).risco == 3) {
+				totalRiscoAlto++;
+			} else if (localidades.get(k).risco == 2) {
+				totalRiscoMedio++;
+			} else if (localidades.get(k).risco == 1) {
+				totalRiscoBaixo++;
+			}
+
+		}	
 
 		/* Probabilidade não condicional
 		 * Calculando. */
@@ -268,109 +280,109 @@ public class Main {
 			pRiscoNCondicBaixo++;
 		}
 
-//		double pPluvioAltaRiscoAlto = (double)pluvioAltaRiscoAlto/totalOcorrencias;
-//		double pPluvioAltaRiscoMedio = (double)pluvioAltaRiscoMedio/totalOcorrencias;
-//		double pPluvioAltaRiscoBaixo = (double)pluvioAltaRiscoBaixo/totalOcorrencias;
-//
-//		double pPluvioMediaRiscoAlto = (double)pluvioMediaRiscoAlto/totalOcorrencias;
-//		double pPluvioMediaRiscoMedio = (double)pluvioMediaRiscoMedio/totalOcorrencias;
-//		double pPluvioMediaRiscoBaixo = (double)pluvioMediaRiscoBaixo/totalOcorrencias;
-//
-//		double pPluvioBaixaRiscoAlto = (double)pluvioBaixaRiscoAlto/totalOcorrencias;
-//		double pPluvioBaixaRiscoMedio = (double)pluvioBaixaRiscoMedio/totalOcorrencias;
-//		double pPluvioBaixaRiscoBaixo = (double)pluvioBaixaRiscoBaixo/totalOcorrencias;
-//
-//		double pMareAltaRiscoAlto = (double)mareAltaRiscoAlto/totalOcorrencias;
-//		double pMareAltaRiscoMedio = (double)mareAltaRiscoMedio/totalOcorrencias;
-//		double pMareAltaRiscoBaixo = (double)mareAltaRiscoBaixo/totalOcorrencias;
-//
-//		double pMareMediaRiscoAlto = (double)mareMediaRiscoAlto/totalOcorrencias;
-//		double pMareMediaRiscoMedio = (double)mareMediaRiscoMedio/totalOcorrencias;
-//		double pMareMediaRiscoBaixo = (double)mareMediaRiscoBaixo/totalOcorrencias;
-//
-//		double pMareBaixaRiscoAlto = (double)mareBaixaRiscoAlto/totalOcorrencias;
-//		double pMareBaixaRiscoMedio = (double)mareBaixaRiscoMedio/totalOcorrencias;
-//		double pMareBaixaRiscoBaixo = (double)mareBaixaRiscoBaixo/totalOcorrencias;
-//
-//		if (pPluvioAltaRiscoAlto == 0) {
-//			pPluvioAltaRiscoAlto++;
-//		}
-//
-//		if (pPluvioAltaRiscoMedio == 0) {
-//			pPluvioAltaRiscoMedio++;
-//		}
-//
-//		if (pPluvioAltaRiscoBaixo == 0) {
-//			pPluvioAltaRiscoBaixo++;
-//		}
-//
-//		if (pPluvioMediaRiscoAlto == 0) {
-//			pPluvioMediaRiscoAlto++;
-//		}
-//
-//		if (pPluvioMediaRiscoMedio == 0) {
-//			pPluvioMediaRiscoMedio++;
-//		}
-//
-//		if (pPluvioMediaRiscoBaixo == 0) {
-//			pPluvioMediaRiscoBaixo++;
-//		}
-//
-//		if (pPluvioBaixaRiscoAlto == 0) {
-//			pPluvioBaixaRiscoAlto++;
-//		}
-//
-//		if (pPluvioBaixaRiscoMedio == 0) {
-//			pPluvioBaixaRiscoMedio++;
-//		}
-//
-//		if (pPluvioBaixaRiscoBaixo == 0) {
-//			pPluvioBaixaRiscoBaixo++;
-//		}
-//
-//		if (pMareAltaRiscoAlto == 0) {
-//			pMareAltaRiscoAlto++;
-//		}
-//
-//		if (pMareAltaRiscoMedio == 0) {
-//			pMareAltaRiscoMedio++;
-//		}
-//
-//		if (pMareAltaRiscoBaixo == 0) {
-//			pMareAltaRiscoBaixo++;
-//		}
-//		
-//		if (pMareMediaRiscoAlto == 0) {
-//			pMareMediaRiscoAlto++;
-//		}
-//
-//		if (pMareMediaRiscoMedio == 0) {
-//			pMareMediaRiscoMedio++;
-//		}
-//
-//		if (pMareMediaRiscoBaixo == 0) {
-//			pMareMediaRiscoBaixo++;
-//			
-//		}
-//		
-//		if (pMareBaixaRiscoAlto == 0) {
-//			pMareBaixaRiscoAlto++;
-//		}
-//
-//		if (pMareBaixaRiscoMedio == 0) {
-//			pMareBaixaRiscoMedio++;
-//		}
-//
-//		if (pMareBaixaRiscoBaixo == 0) {
-//			pMareBaixaRiscoBaixo++;
-//		}
+		//		double pPluvioAltaRiscoAlto = (double)pluvioAltaRiscoAlto/totalOcorrencias;
+		//		double pPluvioAltaRiscoMedio = (double)pluvioAltaRiscoMedio/totalOcorrencias;
+		//		double pPluvioAltaRiscoBaixo = (double)pluvioAltaRiscoBaixo/totalOcorrencias;
+		//
+		//		double pPluvioMediaRiscoAlto = (double)pluvioMediaRiscoAlto/totalOcorrencias;
+		//		double pPluvioMediaRiscoMedio = (double)pluvioMediaRiscoMedio/totalOcorrencias;
+		//		double pPluvioMediaRiscoBaixo = (double)pluvioMediaRiscoBaixo/totalOcorrencias;
+		//
+		//		double pPluvioBaixaRiscoAlto = (double)pluvioBaixaRiscoAlto/totalOcorrencias;
+		//		double pPluvioBaixaRiscoMedio = (double)pluvioBaixaRiscoMedio/totalOcorrencias;
+		//		double pPluvioBaixaRiscoBaixo = (double)pluvioBaixaRiscoBaixo/totalOcorrencias;
+		//
+		//		double pMareAltaRiscoAlto = (double)mareAltaRiscoAlto/totalOcorrencias;
+		//		double pMareAltaRiscoMedio = (double)mareAltaRiscoMedio/totalOcorrencias;
+		//		double pMareAltaRiscoBaixo = (double)mareAltaRiscoBaixo/totalOcorrencias;
+		//
+		//		double pMareMediaRiscoAlto = (double)mareMediaRiscoAlto/totalOcorrencias;
+		//		double pMareMediaRiscoMedio = (double)mareMediaRiscoMedio/totalOcorrencias;
+		//		double pMareMediaRiscoBaixo = (double)mareMediaRiscoBaixo/totalOcorrencias;
+		//
+		//		double pMareBaixaRiscoAlto = (double)mareBaixaRiscoAlto/totalOcorrencias;
+		//		double pMareBaixaRiscoMedio = (double)mareBaixaRiscoMedio/totalOcorrencias;
+		//		double pMareBaixaRiscoBaixo = (double)mareBaixaRiscoBaixo/totalOcorrencias;
+		//
+		//		if (pPluvioAltaRiscoAlto == 0) {
+		//			pPluvioAltaRiscoAlto++;
+		//		}
+		//
+		//		if (pPluvioAltaRiscoMedio == 0) {
+		//			pPluvioAltaRiscoMedio++;
+		//		}
+		//
+		//		if (pPluvioAltaRiscoBaixo == 0) {
+		//			pPluvioAltaRiscoBaixo++;
+		//		}
+		//
+		//		if (pPluvioMediaRiscoAlto == 0) {
+		//			pPluvioMediaRiscoAlto++;
+		//		}
+		//
+		//		if (pPluvioMediaRiscoMedio == 0) {
+		//			pPluvioMediaRiscoMedio++;
+		//		}
+		//
+		//		if (pPluvioMediaRiscoBaixo == 0) {
+		//			pPluvioMediaRiscoBaixo++;
+		//		}
+		//
+		//		if (pPluvioBaixaRiscoAlto == 0) {
+		//			pPluvioBaixaRiscoAlto++;
+		//		}
+		//
+		//		if (pPluvioBaixaRiscoMedio == 0) {
+		//			pPluvioBaixaRiscoMedio++;
+		//		}
+		//
+		//		if (pPluvioBaixaRiscoBaixo == 0) {
+		//			pPluvioBaixaRiscoBaixo++;
+		//		}
+		//
+		//		if (pMareAltaRiscoAlto == 0) {
+		//			pMareAltaRiscoAlto++;
+		//		}
+		//
+		//		if (pMareAltaRiscoMedio == 0) {
+		//			pMareAltaRiscoMedio++;
+		//		}
+		//
+		//		if (pMareAltaRiscoBaixo == 0) {
+		//			pMareAltaRiscoBaixo++;
+		//		}
+		//		
+		//		if (pMareMediaRiscoAlto == 0) {
+		//			pMareMediaRiscoAlto++;
+		//		}
+		//
+		//		if (pMareMediaRiscoMedio == 0) {
+		//			pMareMediaRiscoMedio++;
+		//		}
+		//
+		//		if (pMareMediaRiscoBaixo == 0) {
+		//			pMareMediaRiscoBaixo++;
+		//			
+		//		}
+		//		
+		//		if (pMareBaixaRiscoAlto == 0) {
+		//			pMareBaixaRiscoAlto++;
+		//		}
+		//
+		//		if (pMareBaixaRiscoMedio == 0) {
+		//			pMareBaixaRiscoMedio++;
+		//		}
+		//
+		//		if (pMareBaixaRiscoBaixo == 0) {
+		//			pMareBaixaRiscoBaixo++;
+		//		}
 
-//		double pFimRiscAlto = pRiscoNCondicAlto * pPluvioAltaRiscoAlto * pPluvioMediaRiscoAlto * pPluvioBaixaRiscoAlto 
-//				* pMareAltaRiscoAlto * pMareMediaRiscoAlto * pMareBaixaRiscoAlto;
-//		double pFimRiscMedio = pRiscoNCondicMedio *  pPluvioAltaRiscoMedio * pPluvioMediaRiscoMedio * pPluvioBaixaRiscoMedio 
-//				* pMareAltaRiscoAlto * pMareMediaRiscoAlto * pMareBaixaRiscoAlto; 
-//		double pFimRiscBaixo = pRiscoNCondicBaixo * pPluvioAltaRiscoBaixo * pPluvioMediaRiscoBaixo * pPluvioBaixaRiscoBaixo 
-//				* pMareAltaRiscoBaixo * pMareMediaRiscoBaixo * pMareBaixaRiscoBaixo;
+		//		double pFimRiscAlto = pRiscoNCondicAlto * pPluvioAltaRiscoAlto * pPluvioMediaRiscoAlto * pPluvioBaixaRiscoAlto 
+		//				* pMareAltaRiscoAlto * pMareMediaRiscoAlto * pMareBaixaRiscoAlto;
+		//		double pFimRiscMedio = pRiscoNCondicMedio *  pPluvioAltaRiscoMedio * pPluvioMediaRiscoMedio * pPluvioBaixaRiscoMedio 
+		//				* pMareAltaRiscoAlto * pMareMediaRiscoAlto * pMareBaixaRiscoAlto; 
+		//		double pFimRiscBaixo = pRiscoNCondicBaixo * pPluvioAltaRiscoBaixo * pPluvioMediaRiscoBaixo * pPluvioBaixaRiscoBaixo 
+		//				* pMareAltaRiscoBaixo * pMareMediaRiscoBaixo * pMareBaixaRiscoBaixo;
 		// System.out.printf("%nAlto: " + riscoAlto + " Médio: " + riscoMedio + " Baixo: " + riscoBaixo + "%n");
 
 		//		System.out.println("Risco Alto " + riscoAlto);
@@ -743,9 +755,9 @@ public class Main {
 		//			riscCalcBaixo = pRiscoBaixo * pRiscoBaixoPluviometriaBaixa * pRiscoBaixoMarehBaixa;
 		//		}
 
-		
+
 		System.out.println("Pluviometria entrada 2 " + pluviometriaEntrada);
-		
+
 		//Pluviometria Baixa
 		if (pluviometriaEntrada.equals(1.0f)) {
 			boolean resultado = verifica(localidades, 1, 1);
@@ -783,8 +795,10 @@ public class Main {
 		}
 
 
-
+		System.out.println();
 		System.out.println("Risco Alto Intermed " + pRiscoAlto);
+		System.out.println("Risco Médio Intermed " + pRiscoMedio);
+		System.out.println("Risco Baixo Intermed " + pRiscoBaixo);
 
 		//Maré Baixa
 		if (mareEntrada.equals(1.0f)) {
@@ -818,15 +832,15 @@ public class Main {
 				pRiscoBaixo = pRiscoBaixo * pRiscoBaixoMarehAlta; 
 			}
 		}
-		
+
 		if (pRiscoAlto==1) {
 			pRiscoAlto--;
 		}
-		
+
 		if(pRiscoMedio==1) {
 			pRiscoMedio--;
 		}
-		
+
 		if(pRiscoBaixo==1) {
 			pRiscoBaixo--;
 		}
@@ -856,11 +870,11 @@ public class Main {
 		if (maior>0 && maior == pRiscoAlto && pRiscoAlto!=pRiscoMedio && pRiscoAlto!=pRiscoBaixo) {
 			System.out.println("O Risco de alagamento é Alto.");
 		}
-		
+
 		if (maior>0 && maior == pRiscoMedio && pRiscoMedio!=pRiscoAlto && pRiscoMedio!=pRiscoBaixo) {
 			System.out.println("O Risco de alagamento é Médio.");
 		} 
-		
+
 		if (maior>0 && maior == pRiscoBaixo && pRiscoBaixo!=pRiscoMedio && pRiscoBaixo!=pRiscoAlto) {
 			System.out.println("O Risco de alagamento é Baixo.");
 		}
