@@ -241,6 +241,8 @@ public class Main {
 
 		// OK
 		// System.out.println("Total ocorrencias " + totalOcorrencias);
+		
+		// System.out.println("\nRisco Baixo: " + totalRiscoBaixo);
 
 		for (int k = 0; k < localidades.size() - 1; k++) {
 
@@ -561,7 +563,7 @@ public class Main {
 		pRiscoMedioMarehMedia = (double)riscoMedioMarehMedia/(localidades.size()-1);
 		pRiscoMedioMarehBaixa = (double)riscoMedioMarehBaixa/(localidades.size()-1);
 
-		System.out.println("RiscoBaixoMarehMedia " + riscoBaixoMarehMedia + " , riscoBaixo " + totalRiscoBaixo);
+		System.out.println("RiscoBaixoMarehMedia " + riscoBaixoMarehMedia);
 		System.out.printf(" **** NÚMERO de linhas de entrada %d %n", (localidades.size()-1));
 		pRiscoBaixoMarehAlta = (double)riscoBaixoMarehAlta/(localidades.size()-1);
 		pRiscoBaixoMarehMedia = (double)riscoBaixoMarehMedia/(localidades.size()-1);
